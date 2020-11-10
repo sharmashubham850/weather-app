@@ -1,5 +1,3 @@
-console.log('Client side Javascript loaded')
-
 async function fetchWeather(address) {
     const response = await fetch(`http://localhost:3000/weather?address=${address}`);
     const data = await response.json();
