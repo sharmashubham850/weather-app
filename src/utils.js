@@ -51,9 +51,11 @@ async function forecast(latitude, longitude) {
         });
         const desc = response.data.weather[0].description;
         const temp = response.data.main.temp;
+        const temp_min = response.data.main.temp_min;
+        const temp_max = response.data.main.temp_max;
         const rain = response.data.clouds.all;
 
-        return `It is <b>${desc}</b> here and currently <em>${temp}</em> degrees out. There is a ${rain}% chance of rain.`;
+        return `It is <b>${desc}</b> here and currently <em>${temp}</em> degrees out. The high today is <em>${temp_max}</em> with a low of <em>${temp_min}</em>. There is a ${rain}% chance of rain.`;
     }
 
     catch (err) {
